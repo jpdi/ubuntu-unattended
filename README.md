@@ -26,7 +26,7 @@ This script has been tested on and with these three versions as well, but I see 
 * From your command line, run the following commands:
 
 ```
-$ wget https://raw.githubusercontent.com/netson/ubuntu-unattended/master/create-unattended-iso.sh
+$ wget https://raw.githubusercontent.com/jpdi/ubuntu-unattended/master/create-unattended-iso.sh
 $ chmod +x create-unattended-iso.sh
 $ sudo ./create-unattended-iso.sh
 ```
@@ -106,7 +106,7 @@ This script does a bunch of stuff, here's the quick walk-through:
  creating the remastered iso
  -----
  finished remastering your ubuntu iso file
- the new file is located at: /tmp/ubuntu-14.04.2-server-amd64-unattended.iso
+ the new file is located at: /tmp/ubuntu-14.04.2-server-amd64-unattended-jpdi.iso
  your username is: netson
  your password is: 
  your hostname is: ubuntu
