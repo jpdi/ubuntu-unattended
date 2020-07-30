@@ -123,7 +123,7 @@ done
 
 download_file=$(grep -w ^$ubver ${WORKFILE} | awk '{print $4}')           # filename of the iso to be downloaded
 download_location=$(grep -w ^$ubver ${WORKFILE} | awk '{print $3}')     # location of the file to be downloaded
-new_iso_name="ubuntu-$(grep -w ^$ubver ${WORKFILE} | awk '{print $2}')-server-amd64-unattended.iso" # filename of the new iso file to be created
+new_iso_name="ubuntu-$(grep -w ^$ubver ${WORKFILE} | awk '{print $2}')-server-amd64-unattended-jpdi.iso" # filename of the new iso file to be created
 
 if [ -f /etc/timezone ]; then
   timezone=`cat /etc/timezone`
@@ -223,7 +223,7 @@ sed -i -r 's/timeout\s+[0-9]+/timeout 1/g' $tmp/iso_new/isolinux/isolinux.cfg
 
 # set late command
 
-   late_command="chroot /target curl -L -o /home/$username/start.sh https://raw.githubusercontent.com/netson/ubuntu-unattended/master/start.sh ;\
+   late_command="chroot /target curl -L -o /home/$username/start.sh https://raw.githubusercontent.com/jpdi/ubuntu-unattended/master/start.sh ;\
      chroot /target chmod +x /home/$username/start.sh ;"
 
 # copy the netson seed file to the iso
