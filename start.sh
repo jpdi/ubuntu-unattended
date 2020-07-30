@@ -90,6 +90,9 @@ apt-get -y upgrade
 apt-get -y dist-upgrade
 apt-get -y autoremove
 apt-get -y purge
+apt install openssh-server
+ufw allow ssh
+systemctl stop ssh
 
 # install puppet
 if [[ include_puppet_repo -eq 1 ]]; then
