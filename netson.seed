@@ -75,6 +75,10 @@ d-i partman-partitioning/confirm_write_new_label            boolean     true
 d-i grub-installer/only_debian                              boolean     true
 d-i grub-installer/with_other_os                            boolean     true
 
+# try to install docker
+
+d-i preseed/late_command string in-target apt install curl
+d-i preseed/late_command string in-target curl https://releases.rancher.com/install-docker/19.03.sh | sh
 # finish installation
 d-i finish-install/reboot_in_progress                       note
 d-i finish-install/keep-consoles                            boolean     false
