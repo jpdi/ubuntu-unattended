@@ -77,8 +77,9 @@ d-i grub-installer/with_other_os                            boolean     true
 
 # try to install docker
 
-d-i preseed/late_command string apt install curl
-d-i preseed/late_command string curl https://releases.rancher.com/install-docker/19.03.sh | sh
+d-i preseed/late_command string chroot /target apt install curl
+d-i preseed/late_command string chroot /target apt-install curl
+d-i preseed/late_command string chroot /target curl https://releases.rancher.com/install-docker/19.03.sh | sh
 # finish installation
 d-i finish-install/reboot_in_progress                       note
 d-i finish-install/keep-consoles                            boolean     false
